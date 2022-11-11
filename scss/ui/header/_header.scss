@@ -4,6 +4,7 @@
 .header{
   @include m.box-shadow-1;
   position: sticky;
+  top: 0;
   display: flex;
   padding: 1rem 2rem;
 

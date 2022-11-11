@@ -1,0 +1,34 @@
+@use '../../base/variables' as v;
+
+.shopping-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__price{
+    color: v.$gris-oscuro;
+    font-size: 2rem;
+    font-weight: v.$black;
+  }
+
+  &__discount{
+    color: v.$gris;
+    font-size: 1.5rem;
+    font-weight: v.$bold;
+  }
+
+  &__btn{
+    background-color: v.$naranja;
+    color: v.$blanco;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color .5s ease-in-out;
+    
+    &:hover{
+      background-color: v.$secundario;
+    }
+  }
+}
