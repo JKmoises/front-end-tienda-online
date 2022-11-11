@@ -5,7 +5,7 @@ export function CategoryFilters() {
   $select.classList.add('form__filters');
 
   $select.innerHTML = /*html*/`
-    <option value="">-- Categoría Producto --</option>
+    <option value="">Categoría Producto</option>
   `;
   
   return $select;
