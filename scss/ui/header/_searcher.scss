@@ -1,0 +1,17 @@
+@use '../../base/variables' as v;
+
+.search-form{
+  display: flex;
+  align-items: center;
+
+  &__input{
+    width: 80%;
+  }
+
+  &__icon{
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+}

@@ -1,0 +1,39 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.header{
+  @include m.box-shadow-1;
+  position: sticky;
+  display: flex;
+  padding: 1rem 2rem;
+
+  &__logo{
+    @include m.texto-fluido(2rem,4rem);
+    text-transform: uppercase;
+    font-weight: v.$regular;
+    letter-spacing: .2rem;
+    margin: 0;
+
+    &:hover{
+      animation: pulse 1.5s linear infinite;
+    }
+    
+    a{
+      @include m.texto-degradado(v.$naranja,v.$secundario);
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
