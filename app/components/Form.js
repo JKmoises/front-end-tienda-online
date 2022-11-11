@@ -9,5 +9,6 @@ export function Form(){
   $form.appendChild(SearchForm());
   $form.appendChild(CategoryFilters());
 
+
   return $form;
 }

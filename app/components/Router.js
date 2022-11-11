@@ -4,9 +4,7 @@ import { ProductCard } from "./ProductCard.js";
 
 
 export async function Router(){
-  const d = document,
-    w = window,
-    $main = d.getElementById('main');
+  const $main = document.getElementById('main');
 
   let { hash } = location;
 
@@ -16,7 +14,6 @@ export async function Router(){
     await ajax({
       url: api.PRODUCTS,
       cbSuccess: (products) => {
-        console.log(products);
 
         let html = ''; //* Acumulador
         products.forEach(product => html += ProductCard(product));
@@ -25,6 +22,35 @@ export async function Router(){
       }
     });
 
+  } else if (hash.includes('#/productos')) {
+    let query = localStorage.getItem('category');
+    console.log(query);
+
+    if (!query) { 
+      document.querySelector('.loader').style.display = 'none';
+      return false;
+    }
+
+    await ajax({ 
+      url: `${api.SEARCH}${query}`, 
+      cbSuccess: (search) => {
+        console.log(search);
+        let html = ''; 
+
+        if (search.length === 0) {  
+          html = /*html*/`
+            <p class="error">
+              No existen resultados de búsqueda para el término
+              <mark>${query}</mark>
+            </p>
+          `;
+        } else {
+          search.forEach(product => html += ProductCard(product));
+        }
+
+        $main.innerHTML = html; 
+      }
+    });
   }
 
   document.querySelector('.loader').style.display = 'none';

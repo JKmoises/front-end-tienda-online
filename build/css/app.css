@@ -418,6 +418,7 @@ h3 {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    gap: 2rem;
   }
 }
 .form input, .form .form__filters {
