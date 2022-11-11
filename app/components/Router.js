@@ -20,10 +20,12 @@ export async function Router(){
 
         let html = ''; //* Acumulador
         products.forEach(product => html += ProductCard(product));
-        
+
         $main.innerHTML = html;
       }
     });
 
   }
+
+  document.querySelector('.loader').style.display = 'none';
 }
