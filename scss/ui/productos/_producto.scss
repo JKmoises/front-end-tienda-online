@@ -7,6 +7,12 @@
   justify-content: flex-end;
   @include m.box-shadow-1;
   padding: 2rem;
+  transition: transform .5s ease-in-out;
+  
+  &--animar:hover{
+    opacity: .8;
+    transform: scale(.98);
+  }
 
   &__image{
     height: 15rem;

@@ -1,5 +1,6 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/api.js";
+import { animateProductCard } from "../helpers/productUtils.js";
 import { CategoryFilters } from "./CategoryFilters.js";
 import { ProductCard } from "./ProductCard.js";
 
@@ -22,6 +23,7 @@ export async function Router(){
         $main.innerHTML = html;
       }
     });
+    animateProductCard();
 
   } else if (hash.includes('#/productos')) {
     let query = localStorage.getItem('category');
@@ -50,6 +52,7 @@ export async function Router(){
         $main.innerHTML = html; 
       }
     });
+    animateProductCard();
   } 
 
   document.querySelector('.loader').style.display = 'none';

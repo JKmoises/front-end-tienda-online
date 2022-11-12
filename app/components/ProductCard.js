@@ -1,5 +1,4 @@
-import formatPrice from "../helpers/formatPrice.js";
-
+import { formatPrice } from "../helpers/productUtils.js";
 
 export function ProductCard(props) {
   let { id, name, price, url_image, discount } = props;
