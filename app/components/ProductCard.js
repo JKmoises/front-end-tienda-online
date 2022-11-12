@@ -14,7 +14,9 @@ export function ProductCard(props) {
       <div class="shopping-container">
         <p>
           <span class="shopping-container__price">${formatPrice(price)}</span>
-          <sup class="shopping-container__discount">${priceDiscount}</sup>
+          <sup class="shopping-container__discount" title="Producto con ${priceDiscount} de descuento">
+            ${priceDiscount}
+          </sup>
         </p>
         <button class="shopping-container__btn" data-id="${id}">
           <i class="fas fa-cart-plus"></i>

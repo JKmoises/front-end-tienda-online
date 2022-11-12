@@ -439,6 +439,7 @@ h3 {
 .form__filters {
   color: #1E293B;
   width: calc(100% - 4rem) !important;
+  cursor: pointer;
 }
 
 .loader {
@@ -487,6 +488,12 @@ h3 {
   padding: 2rem;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+.product-card--filter {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
+}
 @media (min-width: 1024px) {
   .product-card--animar:hover {
     opacity: 0.8;
@@ -517,6 +524,7 @@ h3 {
   color: #64748B;
   font-size: 1.5rem;
   font-weight: 700;
+  cursor: pointer;
 }
 .shopping-container__btn {
   background-color: #E67E22;

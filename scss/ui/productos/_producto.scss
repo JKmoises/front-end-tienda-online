@@ -9,6 +9,13 @@
   padding: 2rem;
   transition: transform .5s ease-in-out,opacity .5s ease-in-out;
   
+  &--filter{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
+  }
+
   @include m.desktop {
     &--animar:hover{
       opacity: .8;

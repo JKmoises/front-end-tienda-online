@@ -38,16 +38,8 @@ export async function Router(){
       cbSuccess: (search) => {
         let html = ''; 
 
-        if (search.length === 0) {  
-          html = /*html*/`
-            <p class="error">
-              No existen resultados de búsqueda para el término
-              <mark>${query}</mark>
-            </p>
-          `;
-        } else {
-          search.forEach(product => html += ProductCard(product));
-        }
+    
+        search.forEach(product => html += ProductCard(product));
 
         $main.innerHTML = html; 
       }

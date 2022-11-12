@@ -7,9 +7,8 @@ export function SearchForm() {
   const $input = document.createElement('input');
   $input.classList.add('search-form__input');
   $input.id = 'categoria'
-  $input.name = 'categoria';
-  $input.type = 'search';
-  $input.placeholder = 'Tienda';
+  $input.type = 'text';
+  $input.placeholder = 'Busca tu producto...';
   $input.autocomplete = 'off';
 
   const $icon = document.createElement('div');
@@ -19,18 +18,31 @@ export function SearchForm() {
   $inputContainer.appendChild($input);
   $inputContainer.appendChild($icon);
 
+  document.addEventListener("keyup", e => { 
+    const $main = document.querySelectorAll('#main > *');
+    const $products = document.querySelectorAll('.product-card');
+    
+    if (e.target.matches('.search-form__input')) { 
+      if (e.key === "Escape") e.target.value = "";
+      
+      let searchedProduct = e.target.value.toLocaleLowerCase();
+  
 
-  if (location.hash.includes('#/productos')) {
-    $input.value = localStorage.getItem('category');
-  }
 
-  document.addEventListener('submit', e => {
-    if (!e.target.matches('.form')) return false;
-    e.preventDefault();
-    localStorage.setItem('category', e.target.categoria.value);
+      $products.forEach(el => {
+        (el.textContent.toLocaleLowerCase().includes(searchedProduct))
+          ? el.classList.remove("product-card--filter")
+          : el.classList.add("product-card--filter");
+      });
 
-    location.hash = `#/productos?categoria=${e.target.categoria.value}`
+
+
+
+
+    }
   });
+
+
   
   return $inputContainer;
   

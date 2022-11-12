@@ -5,11 +5,12 @@ export function CategoryFilters() {
   const $select = document.createElement('select');
   $select.classList.add('form__filters');
   $select.name = 'categoria';
+  $select.title = 'Elige una categoría';
 
    ajax({
     url: api.CATEGORIES,
     cbSuccess: (categories) => {
-      let html = /*html*/`<option value="">Elige una categoría</option>`;
+      let html = /*html*/`<option value="todas">Todos los productos</option>`;
 
       categories.forEach(({ name }) => html += /*html*/`<option value="${name}">${name}</option>`);
 

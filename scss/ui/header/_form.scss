@@ -31,6 +31,7 @@
     @extend input;
     color: v.$gris-oscuro;
     width: calc(100% - 4rem) !important;
+    cursor: pointer;
   }
 
 }
