@@ -9,7 +9,6 @@ export function CategoryFilters() {
    ajax({
     url: api.CATEGORIES,
     cbSuccess: (categories) => {
-      console.log(categories);
       let html = /*html*/`<option value="">Elige una categoría</option>`;
 
       categories.forEach(({ name }) => html += /*html*/`<option value="${name}">${name}</option>`);
@@ -20,7 +19,7 @@ export function CategoryFilters() {
   
   document.addEventListener('change', e => {
     if (!e.target.matches('.form__filters')) return false;
-    console.log(e.target.value);
+
     localStorage.setItem('category', e.target.value);
 
     location.hash = `#/productos?categoria=${e.target.value}`

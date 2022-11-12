@@ -6,7 +6,6 @@ import { ProductCard } from "./ProductCard.js";
 
 export async function Router(){
   const $main = document.getElementById('main');
-  const $selectFilter = document.querySelector('.form__filters');
 
   let { hash } = location;
 
@@ -26,7 +25,6 @@ export async function Router(){
 
   } else if (hash.includes('#/productos')) {
     let query = localStorage.getItem('category');
-    console.log(query);
 
     if (!query) { 
       document.querySelector('.loader').style.display = 'none';
@@ -36,7 +34,6 @@ export async function Router(){
     await ajax({ 
       url: `${api.SEARCH}${query}`, 
       cbSuccess: (search) => {
-        console.log(search);
         let html = ''; 
 
         if (search.length === 0) {  

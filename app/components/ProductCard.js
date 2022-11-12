@@ -1,3 +1,4 @@
+import formatPrice from "../helpers/formatPrice.js";
 
 
 export function ProductCard(props) {
@@ -13,7 +14,7 @@ export function ProductCard(props) {
       
       <div class="shopping-container">
         <p>
-          <span class="shopping-container__price">$${price}</span>
+          <span class="shopping-container__price">${formatPrice(price)}</span>
           <sup class="shopping-container__discount">${priceDiscount}</sup>
         </p>
         <button class="shopping-container__btn" data-id="${id}">
