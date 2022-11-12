@@ -16,6 +16,14 @@ export function CategoryFilters() {
 
       $select.innerHTML = html;
     }
+   });
+  
+  document.addEventListener('change', e => {
+    if (!e.target.matches('.form__filters')) return false;
+    console.log(e.target.value);
+    localStorage.setItem('category', e.target.value);
+
+    location.hash = `#/productos?categoria=${e.target.value}`
   });
 
   return $select;
