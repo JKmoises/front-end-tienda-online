@@ -4,10 +4,11 @@ export function ProductCard(props) {
   let { id, name, price, url_image, discount } = props;
   
   let priceDiscount = parseInt(discount) ? `${discount}%` : '';
+  let productImage = url_image || 'app/assets/sin-imagen.jpg';
   
   return /*html*/`
     <article class="product-card">
-      <img class="product-card__image" src="${url_image}" alt="${name}">
+      <img class="product-card__image" src="${productImage}" alt="${name}">
       <h4 class="product-card__name">${name}</h4>
       
       <div class="shopping-container">
