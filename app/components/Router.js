@@ -1,10 +1,12 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/api.js";
+import { CategoryFilters } from "./CategoryFilters.js";
 import { ProductCard } from "./ProductCard.js";
 
 
 export async function Router(){
   const $main = document.getElementById('main');
+  const $selectFilter = document.querySelector('.form__filters');
 
   let { hash } = location;
 
@@ -51,7 +53,7 @@ export async function Router(){
         $main.innerHTML = html; 
       }
     });
-  }
+  } 
 
   document.querySelector('.loader').style.display = 'none';
 }
