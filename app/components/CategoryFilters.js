@@ -14,8 +14,14 @@ export function CategoryFilters() {
       categories.forEach(({ name }) => html += /*html*/`<option value="${name}">${name}</option>`);
 
       $select.innerHTML = html;
+
+      if (location.hash.includes('#/productos')) {
+        $select.value = localStorage.getItem('category');
+      }
     }
    });
+  
+  
   
   document.addEventListener('change', e => {
     if (!e.target.matches('.form__filters')) return false;

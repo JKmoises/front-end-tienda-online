@@ -7,11 +7,13 @@
   justify-content: flex-end;
   @include m.box-shadow-1;
   padding: 2rem;
-  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out,opacity .5s ease-in-out;
   
-  &--animar:hover{
-    opacity: .8;
-    transform: scale(.98);
+  @include m.desktop {
+    &--animar:hover{
+      opacity: .8;
+      transform: scale(.98);
+    }
   }
 
   &__image{
