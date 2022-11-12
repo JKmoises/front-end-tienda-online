@@ -9,6 +9,8 @@ export function Form(){
   $form.appendChild(SearchForm());
   $form.appendChild(CategoryFilters());
 
+  $form.addEventListener('submit',e => e.preventDefault());
+
 
   return $form;
 }

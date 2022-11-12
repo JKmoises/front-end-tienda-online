@@ -19,7 +19,6 @@ export function SearchForm() {
   $inputContainer.appendChild($icon);
 
   document.addEventListener("keyup", e => { 
-    const $main = document.querySelectorAll('#main > *');
     const $products = document.querySelectorAll('.product-card');
     
     if (e.target.matches('.search-form__input')) { 

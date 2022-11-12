@@ -37,9 +37,18 @@ export async function Router(){
       url: `${api.SEARCH}${query}`, 
       cbSuccess: (search) => {
         let html = ''; 
+      
 
-    
-        search.forEach(product => html += ProductCard(product));
+        if (search.length === 0) {  //* Si el arreglo de objetos está vacío
+          html = /*html*/`
+            <p class="error">
+              No existen resultados de búsqueda para el término
+              <mark>${query}</mark>
+            </p>
+          `;
+        } else {
+          search.forEach(product => html += ProductCard(product));
+        }
 
         $main.innerHTML = html; 
       }
