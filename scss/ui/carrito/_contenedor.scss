@@ -1,0 +1,55 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.cart-container{
+  @include m.box-shadow-1;
+  position: absolute;
+  top: v.$header-height*2.79;
+  right: 0;
+  z-index: 999;
+  width: 60%;
+  padding: 1rem;
+  overflow-y: scroll;
+
+  @include m.telefono {
+    top: v.$header-height*3.1;
+    width: 50%;
+  }
+
+  @include m.tablet {
+    top: v.$header-height*2.55;
+    width: 30%;
+  }
+  
+  @include m.desktop {
+    top: v.$header-height;
+  }
+
+  &__total{
+    margin: 0;
+    margin-bottom: 1rem;
+    color: var(--title-color);
+
+    & > h2{
+      color: v.$gris-oscuro;
+      font-size: 3rem;
+    }
+  }
+
+  &__clean-btn{
+    @include m.boton(transparent,v.$gris);
+
+    &:hover{
+      background-color: v.$gris-oscuro;
+      color: v.$blanco;
+    }
+
+  }
+
+  &__buy-btn{
+    @include m.boton(v.$secundario,v.$blanco);
+    font-weight: v.$regular;
+    border-radius: .5rem;
+  }
+  
+}
