@@ -3,12 +3,13 @@
 
 .cart-container{
   @include m.box-shadow-1;
-  position: absolute;
+  position: fixed;
   top: v.$header-height*2.79;
   right: 0;
   z-index: 999;
   width: 60%;
   padding: 1rem;
+  height: 50ex;
   overflow-y: scroll;
 
   @include m.telefono {

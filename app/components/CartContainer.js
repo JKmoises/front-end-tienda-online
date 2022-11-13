@@ -1,3 +1,4 @@
+import { ProductCart } from "./ProductCart.js";
 import { ShoppingCart } from "./ShoppingCart.js";
 
 export function CartContainer(){
@@ -26,6 +27,8 @@ export function CartContainer(){
   $cartContainer.appendChild(ShoppingCart());
   $cartContainer.appendChild($totalCart);
   $cartContainer.appendChild($buyBtn);
+  
+  ProductCart();
 
 
 

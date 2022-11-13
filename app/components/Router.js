@@ -1,8 +1,10 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/api.js";
+import { addProductToCart } from "../helpers/cartUtils.js";
 import { animateProductCard } from "../helpers/productUtils.js";
 import { ProductCard } from "./ProductCard.js";
 
+let productList = [];
 
 export async function Router(){
   const $main = document.getElementById('main');
@@ -15,7 +17,7 @@ export async function Router(){
     await ajax({
       url: api.PRODUCTS,
       cbSuccess: (products) => {
-
+        productList = [...products];
         let html = ''; //* Acumulador
         products.forEach(product => html += ProductCard(product));
 
@@ -23,6 +25,7 @@ export async function Router(){
       }
     });
     animateProductCard();
+    addProductToCart(productList);
 
   } else if (hash.includes('#/productos')) {
     let query = localStorage.getItem('category');
@@ -47,4 +50,6 @@ export async function Router(){
   } 
 
   document.querySelector('.loader').style.display = 'none';
+
+  
 }
