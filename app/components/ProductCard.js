@@ -8,7 +8,7 @@ export function ProductCard(props) {
   
   return /*html*/`
     <article class="product-card">
-      <img class="product-card__image" src="${productImage}" alt="${name}">
+      <img loading="lazy" class="product-card__image" src="${productImage}" alt="${name}">
       <h4 class="product-card__name">${name}</h4>
       
       <div class="shopping-container">
