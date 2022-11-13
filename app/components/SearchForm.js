@@ -30,7 +30,6 @@ export function SearchForm() {
       let searchedProduct = e.target.value.toLocaleLowerCase();
 
       const $alert = Alert('No existen resultados de búsqueda para el término', searchedProduct);
-      console.log($alert);
   
       $products.forEach(el => {
         (el.textContent.toLocaleLowerCase().includes(searchedProduct)) 
@@ -41,9 +40,7 @@ export function SearchForm() {
 
       if (isProductsFiltered()) {
         document.querySelector('#main').appendChild($alert);
-      } else {
-
-      }
+      } 
     }
   });
 
