@@ -1,12 +1,18 @@
 @use '../../base/variables' as v;
+@use '../../base/mixins' as m;
 
 .search-form{
+  flex: 1;
   position: relative;
   display: flex;
   align-items: center;
 
+  @include m.desktop{   
+    flex: 0;
+  }
+
   &__input{
-    width: 80%;
+    width: 100%;
   }
 
   &__input:valid ~ &__placeholder,

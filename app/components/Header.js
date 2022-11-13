@@ -1,5 +1,6 @@
 import { Form } from "./Form.js";
 import { Logo } from "./Logo.js";
+import { Navigation } from "./Navegation.js";
 
 
 export function Header(){
@@ -8,5 +9,6 @@ export function Header(){
 
   $header.appendChild(Logo());
   $header.appendChild(Form());
+  $header.appendChild(Navigation());
   return $header;
 }
