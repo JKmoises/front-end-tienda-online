@@ -1,0 +1,24 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.alert{
+  @include m.texto-fluido(1rem,2.5rem);
+  padding: 1rem;
+  font-weight: v.$bold;
+  text-align: center;
+  grid-column: span 4;
+
+  &--error{
+    background-color: lighten(v.$rojo,50%);
+    border-left: medium solid v.$rojo;
+    color: v.$rojo;
+  }
+
+  & > mark{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    color: v.$blanco;
+    background-color: v.$rojo;
+  }
+}

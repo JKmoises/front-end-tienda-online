@@ -5,7 +5,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-
+  gap:.5rem;
+  
   @include m.tablet {
     flex-direction: row;
     justify-content: space-evenly;
@@ -15,7 +16,7 @@
 
   input{
     width: 100%;
-    font-size: 2.2rem;
+    font-size: 2rem;
     border-radius: 2rem;
     padding: .3rem 1.5rem;
     background-color: v.$blanco;
@@ -30,7 +31,6 @@
   &__filters{
     @extend input;
     color: v.$gris-oscuro;
-    width: calc(100% - 4rem) !important;
     cursor: pointer;
   }
 

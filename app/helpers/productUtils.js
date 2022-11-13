@@ -24,3 +24,12 @@ export function animateProductCard() {
     },true);
   });
 }
+
+export function isProductsFiltered() {
+  const $products = document.querySelectorAll('.product-card');
+  let productList = Array.apply(null, $products),
+    productClasses = productList.map(product => product.className),
+    isFiltered = productClasses.every(productClass => productClass.includes('product-card--filter'))
+
+  return isFiltered;
+}

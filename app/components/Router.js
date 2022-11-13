@@ -1,7 +1,6 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/api.js";
 import { animateProductCard } from "../helpers/productUtils.js";
-import { CategoryFilters } from "./CategoryFilters.js";
 import { ProductCard } from "./ProductCard.js";
 
 
@@ -37,23 +36,14 @@ export async function Router(){
       url: `${api.SEARCH}${query}`, 
       cbSuccess: (search) => {
         let html = ''; 
-      
-
-        if (search.length === 0) {  //* Si el arreglo de objetos está vacío
-          html = /*html*/`
-            <p class="error">
-              No existen resultados de búsqueda para el término
-              <mark>${query}</mark>
-            </p>
-          `;
-        } else {
-          search.forEach(product => html += ProductCard(product));
-        }
+           
+        search.forEach(product => html += ProductCard(product));
 
         $main.innerHTML = html; 
       }
     });
     animateProductCard();
+    
   } 
 
   document.querySelector('.loader').style.display = 'none';

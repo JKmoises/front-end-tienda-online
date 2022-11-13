@@ -9,7 +9,7 @@
     width: 80%;
   }
 
-  // &__input:valid ~ &__placeholder,
+  &__input:valid ~ &__placeholder,
   &__input:focus ~ &__placeholder{
     transform: translateX(1.5rem) translateY(-1.6rem);
     font-size: 1.2rem;
@@ -17,6 +17,7 @@
     background-color: v.$blanco;
     border-left: thin solid v.$gris-claro;
     border-right: thin solid v.$gris-claro;
+    color: v.$gris-oscuro;
   }
 
   &__placeholder{
@@ -27,18 +28,6 @@
     text-transform: uppercase;
     color: v.$gris;
     transition: transform .5s;
-  }
-
-  &__icon{
-    color: v.$gris-oscuro;
-    padding: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: transform .3s ease;
-
-    &:hover{
-      transform: translateY(-.2rem);
-    }
   }
 
 }
