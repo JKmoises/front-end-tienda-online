@@ -8,14 +8,20 @@ export function SearchForm() {
   $input.classList.add('search-form__input');
   $input.id = 'categoria'
   $input.type = 'text';
-  $input.placeholder = 'Busca tu producto...';
+  $input.placeholder = ' ';
   $input.autocomplete = 'off';
+
+  const $placeholder = document.createElement('span');
+  $placeholder.textContent = 'Busca tu producto';
+  $placeholder.classList.add('search-form__placeholder');
+
 
   const $icon = document.createElement('div');
   $icon.classList.add('search-form__icon');
   $icon.innerHTML = /*html*/`<i class="fas fa-search"></i>`;
 
   $inputContainer.appendChild($input);
+  $inputContainer.appendChild($placeholder);
   $inputContainer.appendChild($icon);
 
   document.addEventListener("keyup", e => { 
