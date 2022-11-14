@@ -4,7 +4,7 @@ import { ShoppingCart } from "./ShoppingCart.js";
 export function CartContainer(){
   const $cartContainer = document.createElement('section');
   $cartContainer.id = 'cart-container';
-  $cartContainer.classList.add('cart-container');
+  $cartContainer.classList.add('cart-container','none');
   
   const $cleanBtn = document.createElement('button');
   $cleanBtn.id = 'cart-container__clean-btn';

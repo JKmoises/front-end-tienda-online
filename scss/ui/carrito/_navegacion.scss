@@ -21,11 +21,14 @@
     border-radius: 50%;
     transition: background-color .5s, color .3s;
     
-    &:hover{
+    &:hover,
+    &--toggle{
       background-color: v.$gris-oscuro;
       color: v.$blanco;
       cursor: pointer;
     }
+
+   
 
   }
 

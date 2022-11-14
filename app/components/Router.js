@@ -1,6 +1,6 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/api.js";
-import { addProductToCart, renderCart } from "../helpers/cartUtils.js";
+import { addProductToCart, cleanCart, renderCart, toggleCart } from "../helpers/cartUtils.js";
 import { animateProductCard } from "../helpers/productUtils.js";
 import { ProductCard } from "./ProductCard.js";
 
@@ -48,8 +48,10 @@ export async function Router(){
   
   document.querySelector('.loader').style.display = 'none';
   animateProductCard();
+  toggleCart()
   renderCart();
   addProductToCart(productList);
+  cleanCart();
 
   
 }
