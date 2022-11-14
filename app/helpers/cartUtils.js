@@ -1,4 +1,4 @@
-import { TemplateCart } from "../components/TemplateCart.js";
+import { ProductCart } from "../components/ProductCart.js";
 import { formatPrice } from "./productUtils.js";
 
 let cart = [];
@@ -21,7 +21,7 @@ function addProduct(e, products) {
   let productId = e.target.dataset.id || e.target.parentElement.dataset.id;
   let product = products.filter((product) => product.id === productId);
   
-  let [{ id, name, price, url_image}] = product;
+  let [{ id, name, price, url_image }] = product;
   
   cartProductObj.id = id;
   cartProductObj.name = name;
@@ -41,7 +41,7 @@ function renderCart() {
   cleanHTML();
 
   const $cart = document.querySelector("#cart");
-  const $template = TemplateCart().content;
+  const $template = ProductCart();
   const $fragment = document.createDocumentFragment();
   let secondaryImage = 'app/assets/sin-imagen.jpg';
 

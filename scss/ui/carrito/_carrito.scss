@@ -1,0 +1,101 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.cart{
+  list-style: none;
+  padding-left: 0;
+  color: v.$gris-oscuro;
+}
+
+.product-cart{
+  font-weight: v.$bold;
+  padding: 1.6rem 0;
+  border-bottom: thin solid v.$gris;
+
+  &:first-child{
+    padding-top: 0;
+  }
+
+  &:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  &__name{
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+  }
+
+  &__img{
+    width: 12rem;
+    margin: .5rem auto;
+  }
+
+  &__container-units{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  &__units{
+    font-style: oblique;
+    font-size: 2.5rem;
+    padding-right: .2rem;
+  }
+  
+  &__x{
+    font-size: 1.7rem;
+    color: v.$gris;
+  }
+  &__price{
+    font-size: 2.2rem;
+    color: v.$black-regular;
+    font-style: oblique;
+  }
+
+  &__container-subtotal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    margin: .8rem 0;
+    text-transform: uppercase;
+
+    @include m.desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__subtotal{
+    @extend .product-cart__price;
+  }
+
+  &__actions{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .8rem;
+    margin-top: .8rem;
+  }
+
+  &__add-btn{
+    @include m.boton(v.$black-regular,v.$blanco);
+    display: flex;
+    align-items: center;
+    background-color: v.$black-regular;
+    font-size: 1.8rem;
+    padding: 1rem;
+    flex: 0 0 2rem;
+    border-radius: .5rem;
+    height: 3rem;
+  }
+
+  &__remove-btn{
+    @extend .product-cart__add-btn;
+  }
+
+}
+

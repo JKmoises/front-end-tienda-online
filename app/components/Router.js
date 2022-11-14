@@ -24,9 +24,6 @@ export async function Router(){
         $main.innerHTML = html;
       }
     });
-    animateProductCard();
-    addProductToCart(productList);
-
   } else if (hash.includes('#/productos')) {
     let query = localStorage.getItem('category');
 
@@ -38,18 +35,20 @@ export async function Router(){
     await ajax({ 
       url: `${api.SEARCH}${query}`, 
       cbSuccess: (search) => {
+        productList = [...search];
         let html = ''; 
-           
+        
         search.forEach(product => html += ProductCard(product));
-
+        
         $main.innerHTML = html; 
       }
     });
-    animateProductCard();
     
   } 
-
+  
   document.querySelector('.loader').style.display = 'none';
+  animateProductCard();
+  addProductToCart(productList);
 
   
 }
