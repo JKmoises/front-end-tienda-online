@@ -2,6 +2,8 @@
 
 ![SPA](https://jonmircha.com/img/blog/arquitectura-spa.png)
 
+> **Nota**: Si se usa _Visual Studio Code_ se recomienda usar el _plugin_ llamado **_es6-string-html_** para que se coloree el html codificado en los archivos _javascript_.
+
 ## Tecnologías:
 Para el desarrollo de el _Frontend_ de esta _App Web_ se usaron las siguientes tecnologías:
 - **_HTML:_** Con este lenguaje se maquetó semánticamente la estructura de la _app_.
@@ -9,6 +11,7 @@ Para el desarrollo de el _Frontend_ de esta _App Web_ se usaron las siguientes t
 - **_Vanilla JS:_** Con este lenguaje de programación se agregó funcionalidad a la _App Web_.
 - **_SASS_**: Con este _Pre-procesador_ se extendieron las funcionalidades de **CSS** como agregar _nesting_, _modularización_, _estilos reutilizables_, _variables_, etc.
 - **_NPM:_** Gestor de dependecias de _NodeJS_ para instalar librerías de _JS_.
+- **SweetAlert2:_** Librería de javascript que permite crear ventanas _modales_.
 
 ---
 

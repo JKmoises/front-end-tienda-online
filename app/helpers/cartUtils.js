@@ -33,7 +33,7 @@ export function finishShopping() {
 
     Swal.fire({
       title: 'Compra realizada',
-      text: `Tu compra a sido realizado con éxito`,
+      text: `Tu compra a sido realizada con éxito`,
       icon: 'success',
       timer: 3000,
     });
