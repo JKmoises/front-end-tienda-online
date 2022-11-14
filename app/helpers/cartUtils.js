@@ -67,7 +67,7 @@ export function calculateBuySubtotal() {
       addUnitToProduct(cartProductId);
     }
 
-    if (e.target.matches('.product-cart__add-btn')) {
+    if (e.target.matches('.product-cart__remove-btn')) {
       removeUnitToProduct(cartProductId);
     }
 
@@ -88,7 +88,16 @@ function addUnitToProduct(productoId) {
 }
 
 function removeUnitToProduct(productoId){
-  
+  cart = cart
+    .map(product => {
+      if (product.id === productoId) {
+        product.units -= 1;
+        product.subtotal -= product.price;
+      }
+
+      return product;
+    })
+    .filter(product => product.units >= 1);
 }
 
 export function renderCart() {
