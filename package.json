@@ -20,5 +20,8 @@
   "homepage": "https://github.com/JKmoises/front-end-tienda-online#readme",
   "devDependencies": {
     "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.6.8"
   }
 }

@@ -55,6 +55,42 @@ function addProduct(e, products) {
   renderCart();
 }
 
+export function calculateBuySubtotal() {
+  document.addEventListener('click', e => {
+    if (!(e.target.matches('.product-cart__add-btn') || e.target.matches('.product-cart__remove-btn'))) {
+      return;
+    }
+
+    let cartProductId = e.target.parentElement.parentElement.dataset.productoId;
+
+    if (e.target.matches('.product-cart__add-btn')) {
+      addUnitToProduct(cartProductId);
+    }
+
+    if (e.target.matches('.product-cart__add-btn')) {
+      removeUnitToProduct(cartProductId);
+    }
+
+    renderCart();
+  });
+}
+
+function addUnitToProduct(productoId) {
+  cart = cart.map(product => {
+    if (product.id === productoId) {
+      product.units += 1;
+      product.subtotal = product.price * product.units;
+    }
+    
+    return product;
+
+  });
+}
+
+function removeUnitToProduct(productoId){
+  
+}
+
 export function renderCart() {
   cleanHTML();
 
