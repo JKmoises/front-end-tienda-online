@@ -35,6 +35,11 @@
       color: v.$gris-oscuro;
       font-size: 3rem;
     }
+
+    &--buy{
+      color: v.$black-regular;
+      font-weight: v.$bold;
+    }
   }
 
   &__clean-btn{

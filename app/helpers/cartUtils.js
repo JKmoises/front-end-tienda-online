@@ -2,6 +2,7 @@ import { ProductCart } from "../components/ProductCart.js";
 import { formatPrice } from "./productUtils.js";
 
 let cart = [];
+let totalCart = 0;
 
 let cartProductObj = {
   id: "",
@@ -37,7 +38,7 @@ function addProduct(e, products) {
   renderCart();
 }
 
-function renderCart() {
+export function renderCart() {
   cleanHTML();
 
   const $cart = document.querySelector("#cart");
@@ -61,7 +62,7 @@ function renderCart() {
   });
   $cart.appendChild($fragment);
 
-  // calcularTotalCompra();
+  calculateTotalBuy();
 }
 
 function cleanHTML($container = document.querySelector("#cart")) {
@@ -69,4 +70,14 @@ function cleanHTML($container = document.querySelector("#cart")) {
   while ($container.firstElementChild) {
     $container.firstElementChild.remove();
   }
+}
+
+function calculateTotalBuy(){
+  const $totalCart = document.querySelector(".cart-container__total--buy");
+  
+  totalCart = cart.reduce((acc, product) => acc + parseInt(product.subtotal), 0);
+  console.log(totalCart);
+
+
+  $totalCart.textContent = `${totalCart === 0 ? totalCart : formatPrice(totalCart)}`;
 }
