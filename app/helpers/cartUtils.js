@@ -13,6 +13,33 @@ let cartProductObj = {
   units: 1,
 };
 
+export function finishShopping() {
+  const $buyBtn = document.querySelector('#cart-container__buy-btn');
+
+  $buyBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+      Swal.fire({
+        title: 'Agrega un producto',
+        text: `Debes agregar al menos un producto al carrito`,
+        icon: 'warning',
+      });
+      return;
+    }
+    cart = [];
+    totalCart = 0;
+
+    cleanHTML();
+    calculateTotalBuy();
+
+    Swal.fire({
+      title: 'Compra realizada',
+      text: `Tu compra a sido realizado con éxito`,
+      icon: 'success',
+      timer: 3000,
+    });
+  });
+}
+
 export function toggleCart() {
   const $cartBtn = document.querySelector('#navigation__cart');
   const $cartContainer = document.querySelector('#cart-container');

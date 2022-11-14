@@ -1,6 +1,13 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/api.js";
-import { addProductToCart, calculateBuySubtotal, cleanCart, renderCart, toggleCart } from "../helpers/cartUtils.js";
+import {
+  addProductToCart,
+  calculateBuySubtotal,
+  cleanCart,
+  finishShopping,
+  renderCart,
+  toggleCart
+} from "../helpers/cartUtils.js";
 import { animateProductCard } from "../helpers/productUtils.js";
 import { ProductCard } from "./ProductCard.js";
 
@@ -53,6 +60,7 @@ export async function Router(){
   addProductToCart(productList);
   calculateBuySubtotal();
   cleanCart();
+  finishShopping();
 
   
 }
