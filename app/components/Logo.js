@@ -5,7 +5,7 @@ export function Logo(){
   $logo.classList.add('header__logo');
 
   $logo.innerHTML = /*html*/`
-    <a href="https://jkmoises.github.io/front-end-tienda-online/">Bsale Test</a>
+    <a href="bsaletest.admoises.com">Bsale Test</a>
   `;
 
   return $logo;

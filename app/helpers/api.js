@@ -1,6 +1,6 @@
 
-const NAME = 'tienda--bsale',
-  ENDPOINT = `https://${NAME}.herokuapp.com/api`,
+const NAME = 'bsaletest.admoises.com',
+  ENDPOINT = `https://${NAME}/api`,
   PRODUCTS = `${ENDPOINT}/productos`,
   CATEGORIES = `${ENDPOINT}/categorias`,
   SEARCH = `${PRODUCTS}?categoria=`;
